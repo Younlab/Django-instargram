@@ -1,5 +1,4 @@
-from django.contrib.auth import authenticate, login
-from django.http import HttpResponse
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 
 
@@ -38,3 +37,10 @@ def login_view(request):
     else:
         # form 이 있는 template를 보여준다.
         return render(request, 'members/login.html')
+
+def logout_view(request):
+    if request.method == 'POST':
+        logout(request)
+        return redirect('posts:post-list')
+    else:
+        return redirect('posts:post-list')
