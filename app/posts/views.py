@@ -1,17 +1,16 @@
 from django.http import HttpResponse
 
-from posts.models import Post
+from .models import Post
 from django.shortcuts import render
 
 
 def post_list(requset):
-    # post = Post.objects.all()
-    # context = {
-    #     'posts':post,
-    # }
-    #
-    # return render(requset, 'post-list', context)
-    return HttpResponse('post-list')
+    posts = Post.objects.all()
+    context = {
+        'posts':posts,
+    }
+
+    return render(requset, 'posts/post_list.html', context)
 
 
 def post_detail(request, pk):
@@ -21,4 +20,4 @@ def post_detail(request, pk):
         'pk':pk,
     }
 
-    return render(request, 'post-detail', context)
+    return render(request, 'posts/post_detail.html')
