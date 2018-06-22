@@ -8,6 +8,13 @@
 </head>
 <body>
 <h1>instargram</h1>
+<div>
+    {% if user.is_authenticated %}
+        <a href="">로그아웃 하기</a>
+        {% else %}
+        <a href="{% url 'members:login' %}"> 로그인하기 </a>
+    {% endif %}
+</div>
 <div class="container">
     <div>
     {% block content %}
