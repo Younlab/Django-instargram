@@ -1,5 +1,3 @@
-from django.http import HttpResponse, HttpResponseRedirect
-
 from .models import Post
 from django.shortcuts import render
 

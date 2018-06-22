@@ -3,6 +3,9 @@
 
 <p>post list</p>
 {% for post in posts %}
-<p><a href="{{ post.pk }}">{{ post }}</a></p>
+    <div>
+        <div>{{ post.author.username }}</div>
+        <div><img src="{{ post.photo.url }}" width="100%"> </div>
+    </div>
 {% endfor %}
 {% endblock %}
