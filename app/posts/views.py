@@ -20,4 +20,4 @@ def post_detail(request, pk):
         'pk':pk,
     }
 
-    return render(request, 'posts/post_detail.html')
+    return render(request, 'posts/post_detail.html', context)
